@@ -1,0 +1,6 @@
+{
+  "name": "Beyond the Frame — The Physics Behind Fiction",
+  "description": "A premium digital science publication deconstructing the physics behind science-fiction cinema through evidence-based analysis, interactive experiments, and cinematic editorial storytelling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

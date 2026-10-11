@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif-display: 'Cinzel', 'Space Grotesk', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    background-color: #030712;
+    color: #F3F6FC;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-serif-display);
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Galaxy background and star twinkle animations */
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+    box-shadow: 0 0 8px 1px rgba(224, 242, 254, 0.95);
+  }
+}
+
+@keyframes starShimmer {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.7) rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.25) rotate(45deg);
+    filter: drop-shadow(0 0 10px rgba(125, 211, 252, 0.95));
+  }
+}
+
+.animate-star-twinkle {
+  animation: starTwinkle var(--twinkle-duration, 3s) ease-in-out infinite var(--twinkle-delay, 0s);
+}
+
+.animate-star-shimmer {
+  animation: starShimmer var(--twinkle-duration, 4s) ease-in-out infinite var(--twinkle-delay, 0s);
+}
+
+.bg-galaxy {
+  background-color: transparent;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
